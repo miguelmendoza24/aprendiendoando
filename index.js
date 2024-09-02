@@ -31,3 +31,12 @@ for (let i = 0; i <= 10; i += 3) {
   console.log(i);
 }
 
+function sumatorio(inicio, final) {
+  let suma = 0;
+  for (let i = inicio; i <= final; i++) {
+    suma += i;
+  }
+  return suma;
+}
+console.log(sumatorio(3, 5));
+console.log(sumatorio(1,100));
