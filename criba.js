@@ -5,5 +5,25 @@ function crearList(fin) {
   }
   return list;
 }
-console.log(crearList(100));
+
+function filtrarNumeros(listaCompleta,numeroFilter) {
+  const result = listaCompleta.filter((numero) => numero % numeroFilter !== 0);
+  return result;
+}
+
+let numerosPrimos = [];
+let lista = crearList(100);
+
+let primerNun = lista[0];
+numerosPrimos.push(primerNun);
+console.log(primerNun);
+
+lista = filtrarNumeros(lista, primerNun);
+
+primerNun = lista[0];
+numerosPrimos.push(primerNun);
+console.log(primerNun);
+lista = filtrarNumeros(lista, primerNun);
+console.log(lista);
+console.log(numerosPrimos);
 
