@@ -1,12 +1,12 @@
 function crearList(fin) {
-  let list =[]
+  let list = [];
   for (let i = 2; i <= fin; i++) {
-    list.push(i) 
+    list.push(i);
   }
   return list;
 }
 
-function filtrarNumeros(listaCompleta,numeroFilter) {
+function filtrarNumeros(listaCompleta, numeroFilter) {
   const result = listaCompleta.filter((numero) => numero % numeroFilter !== 0);
   return result;
 }
@@ -20,10 +20,13 @@ console.log(primerNun);
 
 lista = filtrarNumeros(lista, primerNun);
 
-primerNun = lista[0];
-numerosPrimos.push(primerNun);
 console.log(primerNun);
-lista = filtrarNumeros(lista, primerNun);
-console.log(lista);
-console.log(numerosPrimos);
+
+while (lista.length > 0) {
+  primerNun = lista[0];
+  numerosPrimos.push(primerNun);
+  lista = filtrarNumeros(lista, primerNun);
+  console.log(lista);
+  console.log(numerosPrimos);
+}
 
