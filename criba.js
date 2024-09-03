@@ -11,22 +11,18 @@ function filtrarNumeros(listaCompleta, numeroFilter) {
   return result;
 }
 
-let numerosPrimos = [];
-let lista = crearList(100);
-
-let primerNun = lista[0];
-numerosPrimos.push(primerNun);
-console.log(primerNun);
-
-lista = filtrarNumeros(lista, primerNun);
-
-console.log(primerNun);
-
-while (lista.length > 0) {
-  primerNun = lista[0];
+function obtenerNumerosPrimos(numero) {
+  let lista = crearList(numero);
+  let numerosPrimos = [];
+  let primerNun = lista[0];
   numerosPrimos.push(primerNun);
   lista = filtrarNumeros(lista, primerNun);
-  console.log(lista);
-  console.log(numerosPrimos);
+  
+  while ((primerNun ** 2) < numero) {
+    primerNun = lista[0];
+    numerosPrimos.push(primerNun);
+    lista = filtrarNumeros(lista, primerNun);
+  }
+  return [...numerosPrimos, ...lista]
 }
-
+console.log(obtenerNumerosPrimos(500));
